@@ -6,18 +6,18 @@
   <title>Git | First blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Visual Git Cheat Sheet
-文件的状态及文件状态的转换12345Untracked-&amp;gt;Staged: Add the fileUnmodified-&amp;gt;Modified: Edit the fileModified-&amp;gt;Staged: Stage the fileStaged-&amp;gt;Unmodified: CommitUnmodified-&amp;gt;Untracke">
+文件的状态及文件状态的转换Untracked-&amp;gt;Staged: Add the fileUnmodified-&amp;gt;Modified: Edit the fileModified-&amp;gt;Staged: Stage the fileStaged-&amp;gt;Unmodified: CommitUnmodified-&amp;gt;Untracked">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="https://blackhatpythongit.github.io/2016/08/21/Git/index.html">
 <meta property="og:site_name" content="First blog">
 <meta property="og:description" content="Visual Git Cheat Sheet
-文件的状态及文件状态的转换12345Untracked-&amp;gt;Staged: Add the fileUnmodified-&amp;gt;Modified: Edit the fileModified-&amp;gt;Staged: Stage the fileStaged-&amp;gt;Unmodified: CommitUnmodified-&amp;gt;Untracke">
-<meta property="og:updated_time" content="2016-08-21T15:03:04.096Z">
+文件的状态及文件状态的转换Untracked-&amp;gt;Staged: Add the fileUnmodified-&amp;gt;Modified: Edit the fileModified-&amp;gt;Staged: Stage the fileStaged-&amp;gt;Unmodified: CommitUnmodified-&amp;gt;Untracked">
+<meta property="og:updated_time" content="2016-08-21T15:17:59.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
 <meta name="twitter:description" content="Visual Git Cheat Sheet
-文件的状态及文件状态的转换12345Untracked-&amp;gt;Staged: Add the fileUnmodified-&amp;gt;Modified: Edit the fileModified-&amp;gt;Staged: Stage the fileStaged-&amp;gt;Unmodified: CommitUnmodified-&amp;gt;Untracke">
+文件的状态及文件状态的转换Untracked-&amp;gt;Staged: Add the fileUnmodified-&amp;gt;Modified: Edit the fileModified-&amp;gt;Staged: Stage the fileStaged-&amp;gt;Unmodified: CommitUnmodified-&amp;gt;Untracked">
   
     <link rel="alternate" href="/atom.xml" title="First blog" type="application/atom+xml">
   
@@ -92,14 +92,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://ndpsoftware.com/git-cheatsheet.html" target="_blank" rel="external">Visual Git Cheat Sheet</a></p>
-<h2 id="文件的状态及文件状态的转换"><a href="#文件的状态及文件状态的转换" class="headerlink" title="文件的状态及文件状态的转换"></a>文件的状态及文件状态的转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Untracked-&gt;Staged: Add the file</div><div class="line">Unmodified-&gt;Modified: Edit the file</div><div class="line">Modified-&gt;Staged: Stage the file</div><div class="line">Staged-&gt;Unmodified: Commit</div><div class="line">Unmodified-&gt;Untracked: Remove the file</div></pre></td></tr></table></figure>
-<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">working directory-&gt;staging area: git add &lt;file&gt;...</div><div class="line">staging area-&gt;working directory: git checkout -- &lt;file&gt;...</div><div class="line">staging area-&gt;local repository: git commit</div><div class="line">local repository-&gt;staging area: git reset HEAD &lt;file&gt;</div><div class="line">working directory-&gt;local repository: git commit -a</div><div class="line">local repository-&gt;working directory: git reset --hard HEAD</div></pre></td></tr></table></figure>
+        <script src="https://bramp.github.io/js-sequence-diagrams/js/raphael-min.js"></script>
+<script src="https://bramp.github.io/js-sequence-diagrams/js/underscore-min.js"></script>
+<script src="https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js"></script>
+
+<p><a href="http://ndpsoftware.com/git-cheatsheet.html" target="_blank" rel="external">Visual Git Cheat Sheet</a></p>
+<h2 id="文件的状态及文件状态的转换"><a href="#文件的状态及文件状态的转换" class="headerlink" title="文件的状态及文件状态的转换"></a>文件的状态及文件状态的转换</h2><div class="diagram"><br>Untracked-&gt;Staged: Add the file<br>Unmodified-&gt;Modified: Edit the file<br>Modified-&gt;Staged: Stage the file<br>Staged-&gt;Unmodified: Commit<br>Unmodified-&gt;Untracked: Remove the file<br></div>
+
+
+
+<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><div class="diagram"><br>working directory-&gt;staging area: git add <file>…<br>staging area-&gt;working directory: git checkout – <file>…<br>staging area-&gt;local repository: git commit<br>local repository-&gt;staging area: git reset HEAD <file><br>working directory-&gt;local repository: git commit -a<br>local repository-&gt;working directory: git reset –hard HEAD<br></file></file></file></div>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git add &lt;file&gt;...				# 使staging area变得和working directory一样</div><div class="line">git checkout -- &lt;file&gt;...		# 使working directory变得和staging area一样</div><div class="line"></div><div class="line">git commit						# 使local repository变得和staging area一样</div><div class="line">git reset HEAD &lt;file&gt;			# 使staging area变得和local repository一样</div><div class="line"></div><div class="line">git commit -a					# 使staging area和local repository变得和working directory一样</div><div class="line">git reset --hard HEAD			# 使working directory和staging area和变得和local repository一样</div><div class="line"></div><div class="line"># HEAD可以是[head, head^, head^^, ... head~100, commit_id]</div></pre></td></tr></table></figure>
+<script>
+    $(".diagram").sequenceDiagram({theme: 'hand'});
+</script>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4qupux00002ghm525mbf15" class="article-share-link">Share</a>
+      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4r2s8u00006ohmnv8o1x1d" class="article-share-link">Share</a>
       
       
     </footer>
