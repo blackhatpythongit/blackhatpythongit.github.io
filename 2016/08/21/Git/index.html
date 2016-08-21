@@ -21,7 +21,7 @@
 本地操作
 
 12345678910git add &amp;lt;file&amp;gt;...				# 使staging area变得和working directory一样git checkout -- &amp;lt;file&amp;gt;...		# 使working directory变得和staging area一样git com">
-<meta property="og:updated_time" content="2016-08-21T15:40:45.856Z">
+<meta property="og:updated_time" content="2016-08-21T15:52:02.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
 <meta name="twitter:description" content="Visual Git Cheat Sheet
@@ -115,18 +115,18 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git add &lt;file&gt;...				# 使staging area变得和working directory一样</div><div class="line">git checkout -- &lt;file&gt;...		# 使working directory变得和staging area一样</div><div class="line"></div><div class="line">git commit						# 使local repository变得和staging area一样</div><div class="line">git reset HEAD &lt;file&gt;			# 使staging area变得和local repository一样</div><div class="line"></div><div class="line">git commit -a					# 使staging area和local repository变得和working directory一样</div><div class="line">git reset --hard HEAD			# 使working directory和staging area和变得和local repository一样</div><div class="line"></div><div class="line"># HEAD可以是[head, head^, head^^, ... head~100, commit_id]</div></pre></td></tr></table></figure>
 <script>
-    var diagram = Diagram.parse("Untracked->Staged: Add the file\n\
-        Unmodified->Modified: Edit the file\n\
-        Modified->Staged: Stage the file\n\
-        Staged->Unmodified: Commit\n\
+    var diagram = Diagram.parse("Untracked->Staged: Add the file\r\n\
+        Unmodified->Modified: Edit the file\r\n\
+        Modified->Staged: Stage the file\r\n\
+        Staged->Unmodified: Commit\r\n\
         Unmodified->Untracked: Remove the file");
     diagram.drawSVG("diagram1", {theme: 'hand'});
 
-    var diagram = Diagram.parse("working directory->staging area: git add <file>...\n\
-        staging area->working directory: git checkout -- <file>...\n\
-        staging area->local repository: git commit\n\
-        local repository->staging area: git reset HEAD <file>\n\
-        working directory->local repository: git commit -a\n\
+    var diagram = Diagram.parse("working directory->staging area: git add <file>...\r\n\
+        staging area->working directory: git checkout -- <file>...\r\n\
+        staging area->local repository: git commit\r\n\
+        local repository->staging area: git reset HEAD <file>\r\n\
+        working directory->local repository: git commit -a\r\n\
         local repository->working directory: git reset --hard HEAD");
     diagram.drawSVG("diagram2", {theme: 'hand'});
 </script>
@@ -134,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4s6g1k00006ghmlhvz664s" class="article-share-link">Share</a>
+      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4sl32j000028hmhsbf4g5z" class="article-share-link">Share</a>
       
       
     </footer>
