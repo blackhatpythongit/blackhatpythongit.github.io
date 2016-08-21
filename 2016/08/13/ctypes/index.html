@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>First blog</title>
+  <title>ctypes tutorial | First blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Write something">
-<meta property="og:type" content="website">
-<meta property="og:title" content="First blog">
-<meta property="og:url" content="https://blackhatpythongit.github.io/index.html">
+  <meta name="description" content="1. 加载动态链接库通过访问cdll、windll、oledll的属性来加载库
+1234567&amp;gt;&amp;gt;&amp;gt; from ctypes import *&amp;gt;&amp;gt;&amp;gt; print windll.kernel32&amp;lt;WinDLL &amp;apos;kernel32&amp;apos;, handle 759a0000 at 27aacf0&amp;gt;&amp;gt;&amp;gt;&amp;gt; print cdll">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctypes tutorial">
+<meta property="og:url" content="https://blackhatpythongit.github.io/2016/08/13/ctypes/index.html">
 <meta property="og:site_name" content="First blog">
-<meta property="og:description" content="Write something">
+<meta property="og:description" content="1. 加载动态链接库通过访问cdll、windll、oledll的属性来加载库
+1234567&amp;gt;&amp;gt;&amp;gt; from ctypes import *&amp;gt;&amp;gt;&amp;gt; print windll.kernel32&amp;lt;WinDLL &amp;apos;kernel32&amp;apos;, handle 759a0000 at 27aacf0&amp;gt;&amp;gt;&amp;gt;&amp;gt; print cdll">
+<meta property="og:updated_time" content="2016-08-13T07:13:19.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First blog">
-<meta name="twitter:description" content="Write something">
+<meta name="twitter:title" content="ctypes tutorial">
+<meta name="twitter:description" content="1. 加载动态链接库通过访问cdll、windll、oledll的属性来加载库
+1234567&amp;gt;&amp;gt;&amp;gt; from ctypes import *&amp;gt;&amp;gt;&amp;gt; print windll.kernel32&amp;lt;WinDLL &amp;apos;kernel32&amp;apos;, handle 759a0000 at 27aacf0&amp;gt;&amp;gt;&amp;gt;&amp;gt; print cdll">
   
     <link rel="alternate" href="/atom.xml" title="First blog" type="application/atom+xml">
   
@@ -66,48 +70,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/21/Git/" class="article-date">
-  <time datetime="2016-08-21T10:25:23.000Z" itemprop="datePublished">2016-08-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/21/Git/">Git</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://ndpsoftware.com/git-cheatsheet.html" target="_blank" rel="external">Visual Git Cheat Sheet</a></p>
-<h2 id="文件的状态及文件状态的转换"><a href="#文件的状态及文件状态的转换" class="headerlink" title="文件的状态及文件状态的转换"></a>文件的状态及文件状态的转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Untracked-&gt;Staged: Add the file</div><div class="line">Unmodified-&gt;Modified: Edit the file</div><div class="line">Modified-&gt;Staged: Stage the file</div><div class="line">Staged-&gt;Unmodified: Commit</div><div class="line">Unmodified-&gt;Untracked: Remove the file</div></pre></td></tr></table></figure>
-<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">working directory-&gt;staging area: git add &lt;file&gt;...</div><div class="line">staging area-&gt;working directory: git checkout -- &lt;file&gt;...</div><div class="line">staging area-&gt;local repository: git commit</div><div class="line">local repository-&gt;staging area: git reset HEAD &lt;file&gt;</div><div class="line">working directory-&gt;local repository: git commit -a</div><div class="line">local repository-&gt;working directory: git reset --hard HEAD</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git add &lt;file&gt;...				# 使staging area变得和working directory一样</div><div class="line">git checkout -- &lt;file&gt;...		# 使working directory变得和staging area一样</div><div class="line"></div><div class="line">git commit						# 使local repository变得和staging area一样</div><div class="line">git reset HEAD &lt;file&gt;			# 使staging area变得和local repository一样</div><div class="line"></div><div class="line">git commit -a					# 使staging area和local repository变得和working directory一样</div><div class="line">git reset --hard HEAD			# 使working directory和staging area和变得和local repository一样</div><div class="line"></div><div class="line"># HEAD可以是[head, head^, head^^, ... head~100, commit_id]</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4qupux00002ghm525mbf15" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ctypes" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ctypes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/13/ctypes/" class="article-date">
   <time datetime="2016-08-13T07:13:46.000Z" itemprop="datePublished">2016-08-13</time>
@@ -120,8 +83,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/13/ctypes/">ctypes tutorial</a>
+    <h1 class="article-title" itemprop="name">
+      ctypes tutorial
     </h1>
   
 
@@ -347,114 +310,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-恶意代码混淆技术" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/07/恶意代码混淆技术/" class="article-date">
-  <time datetime="2016-08-07T10:33:46.000Z" itemprop="datePublished">2016-08-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2016/08/21/Git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/07/恶意代码混淆技术/">恶意代码混淆技术</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="代码混淆技术基本概念"><a href="#代码混淆技术基本概念" class="headerlink" title="代码混淆技术基本概念"></a>代码混淆技术基本概念</h2><p>Christian Collberg给出的代码混淆的定义：<br>若混淆变换T将程序P变成P’，保证P和P’具有相同的观察行为，且满足性质<br>1)若P不能终止或出错终止，则P’不能终止或出错终止；<br>2)除此之外P’必须和P具有相同的输出。</p>
-<p>度量混淆变换优劣的三个指标：<br>1)强度(Potency)：混淆算法为程序所增加的复杂度；<br>2)弹性(Resilience)：混淆算法抵抗攻击的能力；<br>3)开销(Cost)：混淆算法给程序带来的额外开销。</p>
-<p>代码混淆可分为静态混淆和动态混淆。<br>静态混淆：在程序投入使用之前对代码进行变换从而令源代码变得更复杂、更难于理解，在程序执行之前，代码已经固定下来，不会在发生变化了。<br>动态混淆：通过使用一些技术(包括压缩、加密等)会使代码在静态与执行时的形态有一定差异，其一般分为两个阶段：第一阶段在编译时执行，这是将对程序中需要保护的代码进行初始转换(对某些代码部分进行压缩和加密等操作)，并在程序中添加运行时代码转换器；第二阶段在程序运行时执行，通过调用运行时代码转换器，真正的代码才能被释放出来交付执行。<br>二者的区别在于动态混淆处理后的代码体在执行时需要调用运行时代码转换器释放真正的代码从而执行功能，而经过静态混淆的代码则不用。</p>
-<h2 id="恶意代码中的代码混淆"><a href="#恶意代码中的代码混淆" class="headerlink" title="恶意代码中的代码混淆"></a>恶意代码中的代码混淆</h2><p>具有代表性的混淆变换技术有加壳技术、变形技术和虚拟机技术。</p>
-<h3 id="加壳技术"><a href="#加壳技术" class="headerlink" title="加壳技术"></a>加壳技术</h3><p>加密的恶意代码主要由两部分组成：解密器(decryptor)和加密的代码体。在代码执行时，两部分同时加载至内存，解密器先取得执行权，对代码体进行解密，在执行恶意代码的功能代码。这种基本的自保护方法除了使用加密外，还包括压缩。</p>
-<p>在恶意代码发展的历史中有三种比较有代表性的加壳技术：加密(Encrypted)、寡态(Oligomorphic)、多态(Polymorphic)。</p>
-<h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4><p>优点：早期的加密技术通过隐藏具有恶意性的代码隐藏了特征，导致恶意代码对于分析和检测有了一定的抵抗能力。<br>缺点：由于方法简单，对检测和分析并没造成太多的困难，虽然检测工具无法直接获取恶意代码体的特征信息，但恒定不变的解密器取代代码本身成为了新的特征。</p>
-<p>为了解决固定解密器特征易被检测的问题，恶意代码编写者发明了寡态和多态技术。</p>
-<h4 id="寡态"><a href="#寡态" class="headerlink" title="寡态"></a>寡态</h4><p>寡态技术需要在恶意代码中包含一个解密器库，每次执行完或传播的时候会随机的从库中选择一个解密器，重新对代码体进行加密并将新的解密器加载在加密后的代码上。</p>
-<p>优点：通过替换解密器在一定程度上弥补了普通加密的缺陷，从而降低了被检测到的可能性、增加了分析难度。<br>缺点：由于解密器都是从解密库中选取的，并且库中的解密器都是没有变化的，所以应用特征码检测技术仍可相对较容易的检测出。</p>
-<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>多态技术是在加密的基础上对解密器使用了代码混淆的产物，在恶意代码代码上添加多态(突变)引擎，恶意代码通过引擎对解密器的变换可以产生无数的变种。</p>
-<p>多态和寡态的比较：<br>多态对于寡态最大的优势在于寡态技术是在有限范围内选择不同的解密器，而多态则是恶意代码自己本身可以产生不同的解密器。</p>
-<p>优点：通过突变引擎从而使解密器的形态千差万别，导致代码的物理形态各不相同，基本上每执行或传播一次就会改变一次，并且每次所产生的代码结果相似度并不明显，所以很难在静态时确定其特征。</p>
-<p>缺点：在动态执行时，代码体总是会被还原至内存，对内存镜像的分析可以很有效的检测出恶意代码的存在。</p>
-<p>补充：针对这种情况，之后出现的一种多重多态的加壳方法有效的抑制了对内存镜像的分析，恶意代码在执行的过程中并不会一次性的暴露所有代码内容和信息，并且在每段代码执行后该段代码又会被加密；除此之外，攻击者还会使用种种反分析手段，比如检测和攻击当前执行环境、时间炸弹等，这些手段可以使代码进行长期休眠，更甚者可以直接攻击当前虚拟环境导致环境崩溃，导致对代码进行动态分析的难度增大。</p>
-<h3 id="变形技术"><a href="#变形技术" class="headerlink" title="变形技术"></a>变形技术</h3><p>变形技术又称”体多态(body-polymorphics)”，该方法通过直接对恶意代码体的代码进行混淆从而逃避分析。变形恶意代码一般是由两部分组成：代码体和变形引擎。</p>
-<p>和多态的区别：<br>变形恶意代码是对整个代码体使用混淆技术，代码每传播一次，通过对变形引擎的调用代码体的代码就会改变一次，并且代码行为不会改变。</p>
-<p>变形引擎需要完成反汇编、代码分析、代码变换、汇编，所以一般情况下，变形引擎的代码量占整个变形恶意代码总代码量的比例都比较高。</p>
-<p>优点：变形恶意代码并不使用加解密，其通过各种代码混淆技术在代码体中添加或改变指令、指令顺序等，导致内存中每次出现的代码版本都是不相同，所以基于特征码的检测对其基本无效。并且已经出现的一些研究表明变形恶意代码的检测是NP-完全难的。<br>缺点：由于该技术在实现和代码调试时难度较大，所以当前出现的使用该技术额恶意代码数量并不多。</p>
-<h3 id="虚拟机技术"><a href="#虚拟机技术" class="headerlink" title="虚拟机技术"></a>虚拟机技术</h3><p>目的：为了抵抗对内存镜像的分析，避免对代码进行静态分析提取语义。<br>基本思想：在操作系统加载恶意代码时，首先动态创建一个虚拟机执行环境emulator，动态解释并执行以字节码方式存在的恶意代码。<br>优点：由于代码的执行系统完全改变，一些基于静态分析获取程序语义的方法失效，具有高强度的迷惑性，是专门用来对抗逆向工程分析的。<br>缺点：该方法在通过虚拟机保证保护强度的同时，也牺牲了指令的执行时间以及存储空间。</p>
-<h2 id="常用的混淆方法"><a href="#常用的混淆方法" class="headerlink" title="常用的混淆方法"></a>常用的混淆方法</h2><h3 id="垃圾指令插入-Dead-code-Insertion"><a href="#垃圾指令插入-Dead-code-Insertion" class="headerlink" title="垃圾指令插入(Dead-code Insertion)"></a>垃圾指令插入(Dead-code Insertion)</h3><h3 id="寄存器重分配-Register-Reassignment"><a href="#寄存器重分配-Register-Reassignment" class="headerlink" title="寄存器重分配(Register Reassignment)"></a>寄存器重分配(Register Reassignment)</h3><h3 id="子程序重排-Subroutine-Reordering"><a href="#子程序重排-Subroutine-Reordering" class="headerlink" title="子程序重排(Subroutine Reordering)"></a>子程序重排(Subroutine Reordering)</h3><h3 id="指令替换-Instruction-Substitution"><a href="#指令替换-Instruction-Substitution" class="headerlink" title="指令替换(Instruction Substitution)"></a>指令替换(Instruction Substitution)</h3><h3 id="指令重排-Code-Translation"><a href="#指令重排-Code-Translation" class="headerlink" title="指令重排(Code Translation)"></a>指令重排(Code Translation)</h3><h3 id="代码融合-Code-Integration"><a href="#代码融合-Code-Integration" class="headerlink" title="代码融合(Code Integration)"></a>代码融合(Code Integration)</h3><p>首先恶意代码会反编译宿主程序到一种可处理的形态，然后再把自己嵌入到代码中，实现“无缝”融合，再把整合后的代码编译成文件，实现隐藏。由于该方法的精妙，检测和还原该种恶意代码的难度很大。</p>
-<h2 id="恶意代码反混淆技术现状和展望"><a href="#恶意代码反混淆技术现状和展望" class="headerlink" title="恶意代码反混淆技术现状和展望"></a>恶意代码反混淆技术现状和展望</h2><h3 id="恶意代码反混淆技术现状"><a href="#恶意代码反混淆技术现状" class="headerlink" title="恶意代码反混淆技术现状"></a>恶意代码反混淆技术现状</h3><p>正规化<br>软件变换<br>项重写<br>binary rewriting</p>
-<h3 id="恶意代码反混淆技术的挑战与发展趋势"><a href="#恶意代码反混淆技术的挑战与发展趋势" class="headerlink" title="恶意代码反混淆技术的挑战与发展趋势"></a>恶意代码反混淆技术的挑战与发展趋势</h3><p>反汇编的问题<br>找出直接对二进制文件进行反混淆变换的方法<br>对混淆技术的研究并不够全面<br>自动化的判断一段代码是否运用了混淆技术对于提高反混淆的效率有很大帮助<br>多重多态的加壳方法<br>如何应对恶意代码对环境的检测<br>通用脱壳器最大的问题在于低效性、无法解决具有环境检测功能的恶意代码、路径覆盖率会对脱壳结果有很大影响</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/07/恶意代码混淆技术/" data-id="cis4qupwi00022ghm5ph8ktz2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/06/hello-world/" class="article-date">
-  <time datetime="2016-08-06T13:13:38.264Z" itemprop="datePublished">2016-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          Git
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/06/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2016/08/07/恶意代码混淆技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">恶意代码混淆技术</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/06/hello-world/" data-id="cis4qupy600032ghmjhuh0w85" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
