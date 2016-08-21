@@ -21,7 +21,7 @@
 本地操作
 
 12345678910git add &amp;lt;file&amp;gt;...				# 使staging area变得和working directory一样git checkout -- &amp;lt;file&amp;gt;...		# 使working directory变得和staging area一样git com">
-<meta property="og:updated_time" content="2016-08-21T15:52:02.313Z">
+<meta property="og:updated_time" content="2016-08-21T15:56:33.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
 <meta name="twitter:description" content="Visual Git Cheat Sheet
@@ -120,7 +120,7 @@
         Modified->Staged: Stage the file\r\n\
         Staged->Unmodified: Commit\r\n\
         Unmodified->Untracked: Remove the file");
-    diagram.drawSVG("diagram1", {theme: 'hand'});
+    diagram.drawSVG("diagram1", {theme: 'simple'});
 
     var diagram = Diagram.parse("working directory->staging area: git add <file>...\r\n\
         staging area->working directory: git checkout -- <file>...\r\n\
@@ -128,13 +128,13 @@
         local repository->staging area: git reset HEAD <file>\r\n\
         working directory->local repository: git commit -a\r\n\
         local repository->working directory: git reset --hard HEAD");
-    diagram.drawSVG("diagram2", {theme: 'hand'});
+    diagram.drawSVG("diagram2", {theme: 'simple'});
 </script>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4sl32j000028hmhsbf4g5z" class="article-share-link">Share</a>
+      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4sr66t0000lwhm818gn7ps" class="article-share-link">Share</a>
       
       
     </footer>
