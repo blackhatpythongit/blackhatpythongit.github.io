@@ -5,40 +5,31 @@
   
   <title>Git | First blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+  <meta name="description" content="Visual Git Cheat Sheet
+文件的状态及文件状态的转换
 
-## 文件的状态及文件状态的转换
+本地操作
 
-
-Untracked-&amp;gt;Staged: Add the file
-Unmodified-&amp;gt;Modified: Edit the file
-Modified-&amp;gt;Staged: Stage the file
-Stage">
+12345678910git add &amp;lt;file&amp;gt;...				# 使staging area变得和working directory一样git checkout -- &amp;lt;file&amp;gt;...		# 使working directory变得和staging area一样git com">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="https://blackhatpythongit.github.io/2016/08/21/Git/index.html">
 <meta property="og:site_name" content="First blog">
-<meta property="og:description" content="[Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+<meta property="og:description" content="Visual Git Cheat Sheet
+文件的状态及文件状态的转换
 
-## 文件的状态及文件状态的转换
+本地操作
 
-
-Untracked-&amp;gt;Staged: Add the file
-Unmodified-&amp;gt;Modified: Edit the file
-Modified-&amp;gt;Staged: Stage the file
-Stage">
-<meta property="og:updated_time" content="2016-08-21T15:28:12.674Z">
+12345678910git add &amp;lt;file&amp;gt;...				# 使staging area变得和working directory一样git checkout -- &amp;lt;file&amp;gt;...		# 使working directory变得和staging area一样git com">
+<meta property="og:updated_time" content="2016-08-21T15:39:14.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
-<meta name="twitter:description" content="[Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+<meta name="twitter:description" content="Visual Git Cheat Sheet
+文件的状态及文件状态的转换
 
-## 文件的状态及文件状态的转换
+本地操作
 
-
-Untracked-&amp;gt;Staged: Add the file
-Unmodified-&amp;gt;Modified: Edit the file
-Modified-&amp;gt;Staged: Stage the file
-Stage">
+12345678910git add &amp;lt;file&amp;gt;...				# 使staging area变得和working directory一样git checkout -- &amp;lt;file&amp;gt;...		# 使working directory变得和staging area一样git com">
   
     <link rel="alternate" href="/atom.xml" title="First blog" type="application/atom+xml">
   
@@ -116,42 +107,34 @@ Stage">
         <script src="https://bramp.github.io/js-sequence-diagrams/js/raphael-min.js"></script>
 <script src="https://bramp.github.io/js-sequence-diagrams/js/underscore-min.js"></script>
 <script src="https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
 
-[Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+<p><a href="http://ndpsoftware.com/git-cheatsheet.html" target="_blank" rel="external">Visual Git Cheat Sheet</a></p>
+<h2 id="文件的状态及文件状态的转换"><a href="#文件的状态及文件状态的转换" class="headerlink" title="文件的状态及文件状态的转换"></a>文件的状态及文件状态的转换</h2><div id="diagram1"></div>
 
-## 文件的状态及文件状态的转换
-
-<div class="diagram">
-Untracked->Staged: Add the file
-Unmodified->Modified: Edit the file
-Modified->Staged: Stage the file
-Staged->Unmodified: Commit
-Unmodified->Untracked: Remove the file
-</div>
-
-
-
-## 本地操作
-
-<div class="diagram">
-working directory->staging area: git add <file>...
-staging area->working directory: git checkout -- <file>...
-staging area->local repository: git commit
-local repository->staging area: git reset HEAD <file>
-working directory->local repository: git commit -a
-local repository->working directory: git reset --hard HEAD
-</div>
+<h2 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h2><div id="diagram2"></div>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git add &lt;file&gt;...				# 使staging area变得和working directory一样</div><div class="line">git checkout -- &lt;file&gt;...		# 使working directory变得和staging area一样</div><div class="line"></div><div class="line">git commit						# 使local repository变得和staging area一样</div><div class="line">git reset HEAD &lt;file&gt;			# 使staging area变得和local repository一样</div><div class="line"></div><div class="line">git commit -a					# 使staging area和local repository变得和working directory一样</div><div class="line">git reset --hard HEAD			# 使working directory和staging area和变得和local repository一样</div><div class="line"></div><div class="line"># HEAD可以是[head, head^, head^^, ... head~100, commit_id]</div></pre></td></tr></table></figure>
-
 <script>
-    jQuery(".diagram").sequenceDiagram({theme: 'hand'});
+    var diagram = Diagram.parse("Untracked->Staged: Add the file\
+        Unmodified->Modified: Edit the file\
+        Modified->Staged: Stage the file\
+        Staged->Unmodified: Commit\
+        Unmodified->Untracked: Remove the file");
+    diagram.drawSVG("diagram1", {theme: 'hand'});
+
+    var diagram = Diagram.parse("working directory->staging area: git add <file>...\
+        staging area->working directory: git checkout -- <file>...\
+        staging area->local repository: git commit\
+        local repository->staging area: git reset HEAD <file>\
+        working directory->local repository: git commit -a\
+        local repository->working directory: git reset --hard HEAD");
+    diagram.drawSVG("diagram2", {theme: 'hand'});
 </script>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4rqgpx000004hmb6hrkbuy" class="article-share-link">Share</a>
+      <a data-url="https://blackhatpythongit.github.io/2016/08/21/Git/" data-id="cis4s4iz400007khms1a2a8ni" class="article-share-link">Share</a>
       
       
     </footer>
