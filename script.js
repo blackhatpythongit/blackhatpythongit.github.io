@@ -22,12 +22,12 @@ function op(string){
 
 	swith(actionType){
 		case "chr2binary":
-			return string2binary(string);
+		return chr2binary(string);
 		case "binary2chr":
-			return binary2string(string);
+		return binary2chr(string);
 		default:
-			alert("No valid action was chosen");
-			return "";
+		alert("No valid action was chosen");
+		return "";
 	}
 }
 
@@ -38,5 +38,5 @@ function chr2binary(string)
 
 function binary2chr(string)
 {
-	return (String.fromcharCode(Number(string)))
+	return (String.fromcharCode(parseInt(string, 2)))
 }
