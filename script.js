@@ -21,7 +21,7 @@ function op(string){
 		}
 	}
 
-	swith(actionType){
+	switch(actionType){
 		case "chr2binary":
 		return chr2binary(string);
 		case "binary2chr":
