@@ -13,7 +13,7 @@ function op(string) {
   for (var i = 0; i < radioButtonSet.length; i++)
   {
     if (radioButtonSet[i].checked) {
-      actionType = radioButtonSet[i].id;
+      actionType = radioButtonSet[i].value;
     }
   }
   switch (actionType) {
