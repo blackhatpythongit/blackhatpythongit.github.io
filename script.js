@@ -1,6 +1,7 @@
 window.onload = init;
 
 function init(){
+	alert(1);
 	document.getElementsByTagName("form")[0].onsubmit = calc
 }
 
