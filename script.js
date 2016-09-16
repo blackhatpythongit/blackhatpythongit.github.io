@@ -33,5 +33,5 @@ function chr2binary(string)
 }
 function binary2chr(string)
 {
-  return (String.fromcharCode(parseInt(string, 2)));
+  return (String.fromCharCode(parseInt(string, 2)));
 }
